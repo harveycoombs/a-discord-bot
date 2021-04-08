@@ -102,11 +102,8 @@ client.on("guildCreate", guild => {
 
 });
 
-client.on("guildMemberAdd", member => {let role = member.guild.roles.cache.find(r => r.name === "banter").then(member.roles.add(role))});
-
-client.on("guildMemberAdd", member => {let role = member.guild.roles.cache.find(r => r.name === "Normie").then(member.roles.add(role))});
-
-client.on("guildMemberAdd", member => {let role = member.guild.roles.cache.find(r => r.name === "frens").then(member.roles.add(role))});
+const setrole = require('grchoice.json');
+client.on("guildMemberAdd", member => {let role = member.guild.roles.cache.find(r => r.name === setrole)).then(member.roles.add(role))});
 
 client.on("guildMemberRemove", member => {
 

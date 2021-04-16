@@ -1,4 +1,4 @@
-//Copyright, Written by Harvey C. | 2018-2021
+//Copyright, Written by Harvey C. / Harvey#2802 | 2018-2021
 const Discord = require("discord.js");
 const Canvas = require("canvas");
 const fetch = require('node-fetch');
@@ -95,7 +95,7 @@ client.on("guildCreate", guild => {
   .setThumbnail('https://i.ibb.co/WBWccyQ/chirp.png')
   .addFields(
     {name: 'Thankyou :star2:', value: 'Thankyou for adding me to your server! I hope I can provide you with all the essentials a good discord server needs, plus some pretty fun commands on the side!'})
-  .setFooter(`written in nodejs by Harvey#8888`, 'https://i.ibb.co/WBWccyQ/chirp.png')
+  .setFooter(`written in nodejs by Harvey#2802`, 'https://i.ibb.co/WBWccyQ/chirp.png')
   .setTimestamp()
 
   guild.systemChannel.send(welcomeEmbed);
@@ -178,7 +178,7 @@ client.on("message", async message => {
         {name: '```imgsrc``` ```contrast``` ```brightness``` ```bonk``` ```twitter```', value: ':dart: **Fun commands:**'},
         {name: '```define``` ```ship``` ```rather``` ```lie``` ```8ball``` ```ddate``` ```wheel```  ```fact``` ```chess``` ```trivia```', value: ':musical_note: **Music commands:**'},
         {name: '```play``` ```stop``` ```skip``` ```vol``` ```plist``` ```queue``` ```lyrics``` ```shuffle```', value: '**Thanks for using my bot! - Harvey :thumbsup:**'})
-        .setFooter(`written in nodejs by Harvey#8888`, 'https://i.ibb.co/WBWccyQ/chirp.png')
+        .setFooter(`written in nodejs by Harvey#2802`, 'https://i.ibb.co/WBWccyQ/chirp.png')
         .setTimestamp()
 
         message.author.send(helpEmbed);
@@ -213,7 +213,7 @@ client.on("message", async message => {
         .setThumbnail('https://i.ibb.co/WBWccyQ/chirp.png')
         .addFields(
         {name: ':label: bot Username:', value: `Chirpp#3036`, bold:true},
-        {name: ':information_source: Created by:', value: `Harvey#8888`, bold:true},
+        {name: ':information_source: Created by:', value: `Harvey#2802`, bold:true},
         {name: ':tools: Written in:', value: 'JavaScript/Node.JS', bold:true},
         {name: ':speech_balloon: Prefix', value: `c!`, bold:true},
         {name: ':calendar: Version:', value: 'v1.0', bold:true},

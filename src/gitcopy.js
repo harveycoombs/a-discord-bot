@@ -1,3 +1,5 @@
+//Chirpp v2.59 - Harvey C. - http://www.bacharu.com/
+//Some code has been removed due to dependencies/misc. issues
 //Copyright, Written by Harvey C. | 2018-2021
 const Discord = require("discord.js");
 const Canvas = require("canvas");

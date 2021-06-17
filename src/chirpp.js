@@ -1027,18 +1027,20 @@ client.on("message", async message => {
 
     case "erase":
 
-      const eraseEmbed = new Discord.MessageEmbed()
-      .setColor('#33a9df')
-      .setTitle(':wastebasket: Successfully Deleted 10 Messages Containing String: `' + args.join(' ') + '`')
-      .setTimestamp()
-
       message.channel.messages.fetch({limit: 100})
       .then((messages) => {
-       message.channel.bulkDelete(messages.filter(m => m.content.includes(args.join(' '))).array().slice(0, 10))
+        
+      let kwFilter = messages.filter(m => m.content.includes(args.join(' '))).array()
+
+      const eraseEmbed = new Discord.MessageEmbed()
+      .setColor('#33a9df')
+      .setTitle(`:wastebasket: Successfully Deleted ${kwFilter.length} Messages Containing String: ` + '`' + args.join(' ') + '`')
+
+       message.channel.bulkDelete(kwFilter.slice(0, kwFilter.length))
       .then(message.channel.send(eraseEmbed))
       });
 
-    break;  
+    break;
 
     case "wipe":
     

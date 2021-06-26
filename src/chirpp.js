@@ -21,7 +21,7 @@ client.on("ready", () => {
   ██╔══██║██╔══██║██╔══██╗╚██╗ ██╔╝██╔══╝    ╚██╔╝
   ██║  ██║██║  ██║██║  ██║ ╚████╔╝ ███████╗   ██║██╗
   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝   ╚═╝╚═╝
-  Harvey | Bacharu Developments
+  Harvey | @harvey-py
 
    Bot has started successfully in ${client.guilds.cache.size} guilds.`)
    
@@ -137,7 +137,7 @@ client.on("guildCreate", guild => {
   .setURL('http://chirpp.xyz/')
   .setThumbnail(client.user.displayAvatarURL({format: 'png'}))
   .addFields({name: 'Thankyou :star2:', value: 'Thankyou for adding me to your server! I hope I can provide you with all the essentials a good discord server needs, plus some pretty fun commands on the side!'})
-  .setFooter(`written in javascript by Harvey#3699`, client.user.displayAvatarURL({format: 'png'}))
+  .setFooter(`written in javascript by Harvey | @harvey-py`, client.user.displayAvatarURL({format: 'png'}))
   .setTimestamp()
 
   guild.systemChannel.send(welcomeEmbed);
@@ -211,7 +211,7 @@ client.on("message", async message => {
         {name: '```define``` ```ship``` ```rather``` ```lie``` ```8ball``` ```ddate``` ```wheel```  ```fact``` ```chess``` ```trivia```', value: ':musical_note: **Music commands:**'},
         {name: '```play``` ```stop``` ```skip``` ```vol``` ```plist``` ```queue``` ```lyrics``` ```shuffle```', value: '**Thanks for using my bot! - Harvey :thumbsup:**'})
         .setImage('https://i.ibb.co/6gqB7ZH/botbanner.png')
-        .setFooter(`written in javascript by Harvey#3699`, client.user.displayAvatarURL({format: 'png'}))
+        .setFooter(`written in javascript by Harvey | @harvey-py`, client.user.displayAvatarURL({format: 'png'}))
         .setTimestamp()
 
         await message.author.send(helpEmbed);
@@ -251,7 +251,7 @@ client.on("message", async message => {
         .setThumbnail(client.user.displayAvatarURL({format: 'png'}))
         .addFields(
         {name: ':label: bot Username:', value: `Chirpp#3036`, inline:true},
-        {name: ':information_source: Developed by:', value: `Harvey#3699`, inline:true},
+        {name: ':information_source: Developed by:', value: `Harvey | @harvey-py`, inline:true},
         {name: ':tools: Written in:', value: 'JavaScript/Node.JS', inline:true},
         {name: ':speech_balloon: Prefix', value: `c!`, inline:true},
         {name: ':calendar: Version:', value: 'v2.5', inline:true},

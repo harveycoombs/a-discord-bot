@@ -1,4 +1,4 @@
-//Chirpp v2.6 - Harvey C. - https://github.com/harvey-x86/
+//Trekker v2.6 - Harvey C. - https://github.com/harvey-x86/
 //Some code has been removed due to dependencies/misc. issues
 //Copyright, Written by Harvey C. | 2018-2021
 const Discord = require("discord.js");
@@ -28,15 +28,15 @@ client.on("ready", () => {
 
    Bot has started successfully in ${client.guilds.cache.size} guilds.`)
    
-   console.log('\x1b[36m%s\x1b[0m', '   Chirpp v2.6 Started Successfully.')
+   console.log('\x1b[36m%s\x1b[0m', '   Trekker v2.6 Started Successfully.')
 
-   client.user.setActivity(`c! | chirpp.xyz`, {type: 'LISTENING'})
+   client.user.setActivity(`t! | trekker-bot.xyz`, {type: 'LISTENING'})
 
 });
 
 client.on('message', (message) => {
   if(message.content.includes(client.user.id)) 
-  return message.reply(':wave: Hi there! my prefix is: `c!`')
+  return message.reply(':wave: Hi there! my prefix is: `t!`')
 });
 
 client.on('message', async (message) => {
@@ -66,24 +66,6 @@ client.on('message', (message) => {
 });
 
 client.on('unhandledRejection', error => {console.log(error)});
-
-client.on('message', (message) => {
-
-  if(message.content === "carbon hydrogen iridium phosphorus2") {
-
-    const chEmbed = new Discord.MessageEmbed()
-    .setColor(config.color)
-    .setTitle('CHIrP₂')
-    .setThumbnail(client.user.displayAvatarURL({format: 'png'}))
-    .addFields(
-      {name: ':test_tube: Molecular Formula:', value: 'CHIrP₂', bold: true},
-      {name: ':test_tube: Molecular Weight:', value: '267.18 g/mol', bold: true},
-      {name: ':test_tube: Monoisotropic Mass:', value: '267.91827 Da', bold: true})
-    .setTimestamp()
-  
-    message.channel.send(chEmbed);  
-  }
-});
 
 client.on("guildMemberAdd", member => {
 

@@ -1206,7 +1206,7 @@ client.on("message", async message => {
 
     const nocmdEmbed = new Discord.MessageEmbed()
     .setColor(config.color)
-    .setTitle(':warning: Command not found. try ```c!help``` for a full list of commands.')
+    .setTitle(':warning: Command not found. try ```t!help``` for a full list of commands.')
     .setTimestamp()
 
     await message.channel.send(nocmdEmbed);

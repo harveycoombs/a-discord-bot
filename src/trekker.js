@@ -119,8 +119,8 @@ client.on("guildCreate", guild => {
 
   const welcomeEmbed = new Discord.MessageEmbed()
   .setColor(config.color)
-  .setTitle('Chirpp')
-  .setURL('http://chirpp.xyz/')
+  .setTitle('Trekker')
+  .setURL('http://trekker-bot.xyz/')
   .setThumbnail(client.user.displayAvatarURL({format: 'png'}))
   .addFields({name: 'Thankyou :star2:', value: 'Thankyou for adding me to your server! I hope I can provide you with all the essentials a good discord server needs, plus some pretty fun commands on the side!'})
   .setFooter(`written in javascript by Harvey | @harvey-x86 on GitHub`, client.user.displayAvatarURL({format: 'png'}))
@@ -205,11 +205,11 @@ client.on("message", async message => {
 
         const helpEmbed = new Discord.MessageEmbed()
         .setColor(config.color)
-        .setTitle(`Chirpp`)
+        .setTitle(`Trekker`)
         .setAuthor('Command list', client.user.displayAvatarURL({ format: 'png' }))
         .setThumbnail(client.user.displayAvatarURL({ format: 'png' }))
         .addFields(
-          { name: '*prefix - c!*', value: '**:gear: General commands:**', inline: true },
+          { name: '*prefix - t!*', value: '**:gear: General commands:**', inline: true },
           { name: '```help``` ```info``` ```user``` ```avatar``` ```clean``` ```erase``` ```server``` ```news``` ```channel``` ```calc``` ```weather``` ```embed``` ```timer``` ```find``` ```echo```', value: ':crossed_swords: **Moderator commands:**' },
           { name: ' ```kick``` ```ban``` ```warn``` ```mute``` ```invite``` ```crole``` ```drole``` ```arole``` ```rrole``` ```srole``` ```nrole``` ```nick``` ```setup```', value: ':camera_with_flash: **Image commands:**' },
           { name: '```imgsrc``` ```contrast``` ```brightness``` ```bonk``` ```twitter``` ```sus```', value: ':dart: **Fun commands:**' },
@@ -260,7 +260,7 @@ client.on("message", async message => {
         .setTitle(`About Chirpp`)
         .setThumbnail(client.user.displayAvatarURL({ format: 'png' }))
         .addFields(
-          { name: ':label: bot Username:', value: `Chirpp#3036`, inline: true },
+          { name: ':label: bot Username:', value: client.user.id, inline: true },
           { name: ':information_source: Developed by:', value: `Harvey | @harvey-x86 on GitHub`, inline: true },
           { name: ':tools: Written in:', value: 'JavaScript/Python', inline: true },
           { name: ':speech_balloon: Prefix', value: `c!`, inline: true },
@@ -269,10 +269,10 @@ client.on("message", async message => {
           { name: ':alarm_clock: Uptime:', value: pms(client.uptime) })
         .setTimestamp()
 
-        let chirppURL = new dbuttons.MessageButton()
+        let tkURL = new dbuttons.MessageButton()
         .setStyle('url')
-        .setLabel('Chirpp.XYZ')
-        .setURL('http://www.chirpp.xyz/');
+        .setLabel('Website')
+        .setURL('http://www.trekker-bot.xyz/');
 
         let ghURL = new dbuttons.MessageButton()
         .setStyle('url')
@@ -280,7 +280,7 @@ client.on("message", async message => {
         .setURL('https://github.com/harvey-x86/');
 
         await message.channel.send(botinfoEmbed);
-        await message.channel.send('Check Out the Links Below:', { buttons: [chirppURL, ghURL] });
+        await message.channel.send('Check Out the Links Below:', { buttons: [tkURL, ghURL] });
 
       break;
 

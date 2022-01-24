@@ -86,7 +86,7 @@ client.on('messageDelete', (messageDelete) => {
 
   if(messageDelete.content.includes('https://')) {msgDelEmbed.setImage(messageDelete.content)}
 
-  else{msgDelEmbed.setDescription('```' + messageDelete.content + '```')};
+  else{msgDelEmbed.setDescription(``\`\`\`${messageDelete.content}\`\`\``)};
 
   try {messageDelete.guild.systemChannel.send(msgDelEmbed)}
   

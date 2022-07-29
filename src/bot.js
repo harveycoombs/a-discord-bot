@@ -28,7 +28,7 @@ client.on("ready", () => {
 
    Bot has started successfully in ${client.guilds.cache.size} guilds.`)
    
-   console.log('\x1b[36m%s\x1b[0m', '   Trekker v2.6 Started Successfully.')
+   console.log('\x1b[36m%s\x1b[0m', '\tHarvey v2.6 Started Successfully.')
 
    client.user.setActivity(`t! | trekker-bot.xyz`, {type: 'LISTENING'})
 
@@ -36,7 +36,7 @@ client.on("ready", () => {
 
 client.on('message', (message) => {
   if(message.content.includes(client.user.id)) 
-  return message.reply(':wave: Hi there! my prefix is: `t!`')
+  return message.reply(':wave: Hi there! my prefix is: `.`')
 });
 
 client.on('message', async (message) => {

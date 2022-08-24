@@ -1,6 +1,6 @@
 # Just a Discord Bot
 
-Hi, this is just a basic Discord bot, written in JavaScript.
+Hi, this is just a basic Discord bot, written in Rust.
 
 ## What can this bot do?
 below, is a list of all commands:

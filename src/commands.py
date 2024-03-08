@@ -1,3 +1,5 @@
+import discord
+
 from ai import BotAI
 from embeds import BotEmbeds
 

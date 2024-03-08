@@ -1,7 +1,7 @@
 import requests
 import json
 
-openai_token = ""
+from config import BotConfig
 
 class BotAI:
     @staticmethod
@@ -18,7 +18,7 @@ class BotAI:
 
         response = requests.post("https://api.openai.com/v1/chat/completions", data=json.dumps(data), headers={
             "User-Agent": "MyApp/1.0",
-            "Authorization": f"Bearer {openai_token}",
+            "Authorization": f"Bearer {BotConfig.openai_token}",
             "Content-Type": "application/json",
         })
 

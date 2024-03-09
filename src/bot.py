@@ -51,19 +51,19 @@ async def about_command(interaction):
     command_result = BotCommands.about(interaction, bot_start_time)
     await interaction.response.send_message(embed=command_result)
 
-@tree.command(name="ai", description="Interact with an LLM", guild=discord.Object(id=1092878174536335501))
+@tree.command(name="ai", description="Interact with an LLM", guild=discord.Object(id=BotConfig.guild_id))
 @app_commands.describe(prompt="The prompt for the LLM")
 @app_commands.rename(prompt="prompt")
 async def ai_command(interaction, prompt: str):
     await BotCommands.ai(interaction, prompt)
 
-@tree.command(name="apply", description="Applies the specified Role to the Command Author", guild=discord.Object(id=1092878174536335501))
+@tree.command(name="apply", description="Applies the specified Role to the Command Author", guild=discord.Object(id=BotConfig.guild_id))
 @app_commands.describe(role="The Role")
 @app_commands.rename(role="role")
 async def apply_command(interaction, role: discord.Role):
     await BotCommands.apply_role(interaction, role)
 
-@tree.command(name="remove", description="Removes the specified Role from the Command Author", guild=discord.Object(id=1092878174536335501))
+@tree.command(name="remove", description="Removes the specified Role from the Command Author", guild=discord.Object(id=BotConfig.guild_id))
 @app_commands.describe(role="The Role")
 @app_commands.rename(role="role")
 async def remove_command(interaction, role: discord.Role):

@@ -51,31 +51,23 @@ async def about_command(interaction):
     command_result = BotCommands.about(interaction, bot_start_time)
     await interaction.response.send_message(embed=command_result)
 
-@tree.command(name="ai", description="Interact with an LLM", guild=discord.Object(id=BotConfig.guild_id))
+@tree.command(name="ai", description="Interact with an LLM", guild=discord.Object(id=1092878174536335501))
 @app_commands.describe(prompt="The prompt for the LLM")
 @app_commands.rename(prompt="prompt")
 async def ai_command(interaction, prompt: str):
-    await interaction.response.defer()
+    await BotCommands.ai(interaction, prompt)
 
-    response_sections = BotCommands.ai(interaction, prompt)
-
-    for section in response_sections:
-            if len(section) > 0:
-                await interaction.followup.send(f"{section}")
-
-@tree.command(name="apply", description="Apply a specified role to a specified user", guild=discord.Object(id=BotConfig.guild_id))
-@app_commands.describe(user="The User")
-@app_commands.rename(user="user")
+@tree.command(name="apply", description="Applies the specified Role to the Command Author", guild=discord.Object(id=1092878174536335501))
 @app_commands.describe(role="The Role")
 @app_commands.rename(role="role")
-async def apply_command(interaction, user: discord.Member, role: str):
-    target_role = discord.utils.get(interaction.guild.roles, name=role)
+async def apply_command(interaction, role: discord.Role):
+    await BotCommands.apply_role(interaction, role)
 
-    if target_role:
-        await user.add_roles(target_role)
-        await interaction.response.send_message(f":white_check_mark: Role: `{role}` successfully applied to `{user}`")
-    else:
-        await interaction.response.send_message(f":warning: Unable to apply role: `{role}` to `{user}`")
+@tree.command(name="remove", description="Removes the specified Role from the Command Author", guild=discord.Object(id=1092878174536335501))
+@app_commands.describe(role="The Role")
+@app_commands.rename(role="role")
+async def remove_command(interaction, role: discord.Role):
+    await BotCommands.remove_role(interaction, role)
 
 @bot.event  
 async def on_ready():

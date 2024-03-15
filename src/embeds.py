@@ -57,9 +57,7 @@ class BotEmbeds:
         embed.add_field(name=":man_technologist: Developer", value="<@938196905144496139>", inline=True)
         embed.add_field(name=":tools: Language", value="`Python 3.11.8`", inline=True)
         embed.add_field(name=":alarm_clock: Uptime", value=f"`{uptime}`", inline=True)
-        embed.add_field(name=":calendar_spiral: Discord Join Date", value=f"`{BotTools.format_datetime(bot.user.created_at, False)}`", inline=True)
-        embed.add_field(name=":calendar_spiral: Server Join Date", value=f"`{BotTools.format_datetime(bot.user.created_at, False)}`", inline=True)
 
-        embed.set_author(name=f"{bot.user} | About This Bot", icon_url=bot.user.avatar)
+        embed.set_author(name=f"{bot.user} | About this Bot", icon_url=bot.user.avatar)
 
         return embed

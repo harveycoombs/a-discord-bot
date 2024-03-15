@@ -17,7 +17,7 @@ class BotTools:
         elif months > 0:
             return f"{months} Month{'s' if months != 1 else ''}"
         else:
-            return f"{days} Day{'s' if days > != else ''}"
+            return f"{days} Day{'s' if days != 1 else ''}"
     
     def format_datetime(dt, include_time):
         return dt.strftime(f"%B %d, %Y{' at %I:%M%p' if include_time else ''}")

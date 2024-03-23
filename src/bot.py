@@ -72,6 +72,8 @@ async def remove_command(interaction, role: discord.Role):
 @bot.event  
 async def on_ready():
     await tree.sync(guild=discord.Object(id=BotConfig.guild_id))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="/help"))
+
     bot_start_time = datetime.now()
     print("ONLINE")
 

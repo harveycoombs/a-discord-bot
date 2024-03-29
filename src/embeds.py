@@ -1,4 +1,5 @@
 import discord
+import re
 
 from config import BotConfig
 from tools import BotTools

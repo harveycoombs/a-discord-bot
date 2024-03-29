@@ -15,13 +15,33 @@ tree = app_commands.CommandTree(bot)
 bot_start_time = datetime.now()
 
 @bot.event
-async def on_message_delete(msg):
-    if msg.author.id == BotConfig.bot_id: return
+    def deleted_message(msg):
+        message_content = msg.content
 
-    embed = BotEmbeds.deleted_message(msg)
+        print(f"message_content = '{message_content}'")
 
-    log_channel = bot.get_channel(BotConfig.log_channel_id)
-    await log_channel.send(embed=embed)
+        for match in re.finditer(r'^<@([0-9]{1,})>$', message_content):
+            mentioned_user_id = int(match.group(1).strip())
+            mentioned_user = next((user for user in message.mentions if user.id == mentioned_user_id), None)
+
+            print(f"mentioned_user_id = '{mentioned_user_id}'")
+            print(f"mentioned_user = '{mentioned_user.name}'")
+            print(f"<@mentioned_user_id> = <@{mentioned_user_id}>")
+
+            message_content = message_content.replace(f"<@{mentioned_user_id}>", f"@{mentioned_user.name}")
+
+        embed = discord.Embed(
+            description=f":wastebasket: `{message_content}`" if len(message_content) > 0 else "",
+            color=ShamrockBotConfig.embed_color
+        )
+
+        if len(msg.attachments) > 0:
+            embed.set_image(url=msg.attachments[0].url)
+
+        embed.set_author(name=f"{msg.author} | Message Deleted", icon_url=msg.author.avatar)
+        embed.set_footer(text=f"in #{msg.channel}")
+
+        return embed
 
 @bot.event
 async def on_message_edit(old, new):

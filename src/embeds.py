@@ -3,10 +3,23 @@ import discord
 from config import BotConfig
 from tools import BotTools
 
+def format_mentioned_users(raw):
+    formatted = raw
+
+    for match in re.finditer(r'^<@([0-9]{1,})>$', formatted):
+        mentioned_user_id = int(match.group(1).strip())
+        mentioned_user = next((user for user in message.mentions if user.id == mentioned_user_id), None)
+
+        formatted = formatted.replace(f"<@{mentioned_user_id}>", f"@{mentioned_user.name}")
+
+    return formatted
+
 class BotEmbeds:
     def deleted_message(msg):
+        message_content = format_mentioned_users(msg.content)
+
         embed = discord.Embed(
-            description=f":wastebasket: `{msg.content}`" if len(msg.content) > 0 else "",
+            description=f":wastebasket: `{message_content}`" if len(message_content) > 0 else "",
             color=BotConfig.embed_color
         )
 
@@ -19,8 +32,11 @@ class BotEmbeds:
         return embed
 
     def edited_message(old, new):
+        old_message_content = format_mentioned_users(old.content)
+        new_message_content = format_mentioned_users(new.content)
+
         embed = discord.Embed(
-            description=f"`{old.content}` :pencil2: `{new.content}`",
+            description=f"`{old_message_content}` :pencil2: `{new_message_content}`",
             color=BotConfig.embed_color
         )
 

@@ -77,7 +77,7 @@ async def remove_command(interaction, role: discord.Role):
 @app_commands.describe(price="The Price of the Asset when you openned your Position")
 @app_commands.rename(price="price")
 @app_commands.describe(currency="The Currency you used to purchase the Asset")
-@app_commands.rename(currency="price")
+@app_commands.rename(currency="currency")
 async def track_position_command(interaction, asset: str, quantity: str, price: str, currency: str):
     await BotCommands.track_position(interaction, asset, quantity, price, currency)
 

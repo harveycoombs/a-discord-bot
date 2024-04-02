@@ -42,4 +42,6 @@ class BotCommands:
 
     async def track_position(interaction, asset, quantity, price, currency):
         await interaction.response.defer()
-        response = BotCrypto.add_position(interaction.user.id, asset, quantity, price, currency)
+        response = await BotCrypto.add_position(interaction.user.id, asset, quantity, price, currency)
+        
+        await interaction.followup.send(f"{response}")

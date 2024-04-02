@@ -5,6 +5,7 @@ from datetime import datetime
 from ai import BotAI
 from embeds import BotEmbeds
 from tools import BotTools
+from crypto import BotCrypto
 
 class BotCommands:
     def about(interaction, bot_start_time):
@@ -38,3 +39,7 @@ class BotCommands:
             await interaction.response.send_message(f":white_check_mark: Role: `{role}` successfully removed from `{interaction.user}`")
         except:
             await interaction.response.send_message(f":warning: Unable to remove Role: `{role}` from `{interaction.user}`")
+
+    async def track_position(interaction, asset, quantity, price, currency):
+        await interaction.response.defer()
+        response = BotCrypto.add_position(interaction.user.id, asset, quantity, price, currency)

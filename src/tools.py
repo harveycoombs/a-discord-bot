@@ -38,7 +38,7 @@ class BotTools:
         
     @staticmethod
     def store_file_hash(url):
-        file_hash = compute_file_hash(url)
+        file_hash = BotTools.compute_file_hash(url)
         hashes_list = json.load(open("hashes.json"))
     
         if file_hash not in hashes_list: 
@@ -50,7 +50,7 @@ class BotTools:
 
     @staticmethod
     def is_prohibited_file(url):
-        file_hash = compute_file_hash(url)
+        file_hash = BotTools.compute_file_hash(url)
         hashes_list = json.load(open("hashes.json"))
     
         return file_hash in hashes_list

@@ -69,6 +69,18 @@ async def apply_command(interaction, role: discord.Role):
 async def remove_command(interaction, role: discord.Role):
     await BotCommands.remove_role(interaction, role)
 
+@tree.command(name="trackposition", description="adds user to p&l tracking json file", guild=discord.Object(id=BotConfig.guild_id))
+@app_commands.describe(asset="The Asset you wish to track")
+@app_commands.rename(asset="asset")
+@app_commands.describe(quantity="The Quantity of the Asset")
+@app_commands.rename(quantity="quantity")
+@app_commands.describe(price="The Price of the Asset when you openned your Position")
+@app_commands.rename(price="price")
+@app_commands.describe(currency="The Currency you used to purchase the Asset")
+@app_commands.rename(currency="price")
+async def track_position_command(interaction, asset: str, quantity: str, price: str, currency: str):
+    await BotCommands.track_position(interaction, asset, quantity, price, currency)
+
 @bot.event  
 async def on_ready():
     await tree.sync(guild=discord.Object(id=BotConfig.guild_id))

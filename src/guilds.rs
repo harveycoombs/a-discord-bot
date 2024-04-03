@@ -1,7 +1,5 @@
-mod CoralDiscordGuilds {
-    //to-do
-}
-
-struct CoralDiscordGuild {
-    //to-do
+mod guilds {
+    struct CoralDiscordGuild {
+        //to-do
+    }
 }

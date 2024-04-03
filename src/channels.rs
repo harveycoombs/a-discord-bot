@@ -1,7 +1,7 @@
-mod CoralDiscordGuilds {
+mod CoralDiscordChannels {
     //to-do
 }
 
-struct CoralDiscordGuild {
+struct CoralDiscordChannel {
     //to-do
 }

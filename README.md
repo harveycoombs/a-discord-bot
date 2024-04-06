@@ -1,3 +1,1 @@
-# Coral - a Discord API Wrapper written in Rust
-
-Coming Soon.
+# A Discord Bot written in Rust

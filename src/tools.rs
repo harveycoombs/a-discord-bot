@@ -27,5 +27,19 @@ mod bot_tools {
             .await?;
         
         Ok(response)
+    }
+
+    async fn patch_request(url: &str, body: String) -> Result<Response, Error> {
+        let client = reqwest::Client::new();
+    
+        let response = client
+            .patch(url)
+            .header("Content-Type", "application/json")
+            .header("Authorization", "Bot {TOKEN}")
+            .body(body)
+            .send()
+            .await?;
+        
+        Ok(response)
     }    
 }

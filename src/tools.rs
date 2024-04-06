@@ -1,7 +1,7 @@
 use reqwest::header::{HeaderMap, HeaderValue, USER_AGENT};
 use reqwest::{Client, Response, Error};
 
-mod coral_tools {
+mod bot_tools {
     async fn get_request(url: &str) -> Result<Response, Error> {
         let client = reqwest::Client::new();
     
